@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block body %}
     <form action="savedetails/" method="post">
        {% csrf_token %}
@@ -16,6 +16,7 @@
     <h3 id="qty">10</h3>
     <h3 id="amount">1500</h3>
     <button name="order" onclick="CreateOrder()" id="order">create order</button>
+    <img style="height:250px; width:250px" src="{% static 'tshirt.jpg' %}">
 
    <button id="pay">Pay</button>
     <div id="pay"></div>

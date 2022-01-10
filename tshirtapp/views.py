@@ -15,6 +15,8 @@ def CreateOrder(request):
     qty = request.POST['qty']
     amount = request.POST['amount']
     customer = request.POST['name']
+    image = request.POST['image']
+    print("image", image)
     models.Order.objects.create(tshirt=tshirt, orderid=orderid, customer=customer, amount=amount, qty=qty)    
     return JsonResponse("success", safe=False)
 
@@ -28,8 +30,10 @@ def AddCustomer(request):
     email = request.POST['email']
     contact = request.POST['contact']
     address = request.POST['address']
+    print("the ordere", request.POST)
     models.Customer.objects.create(name=name, email=email, contact=contact, address=address)    
-
+    image = request.POST['image']
+    print("image", image)
     return JsonResponse("success", safe=False)
     
 # def return_data(request):
